@@ -3,8 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'admng-client',
   template: `
-    <h1>Bienvenido a seccion clientes</h1>
+    <h1 style="color:white;">Bienvenido a seccion {{title}}</h1>
     <router-outlet></router-outlet>
   `,
 })
-export class ClientComponent { }
+export class ClientComponent {
+  title = "Clientes";
+}

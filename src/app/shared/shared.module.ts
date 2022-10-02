@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedRoutingModule } from './shared-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -10,6 +9,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
 const MATERIAL_MODULES = [
   MatButtonModule,
   MatInputModule,
@@ -17,17 +21,19 @@ const MATERIAL_MODULES = [
   MatIconModule,
   MatCardModule,
   MatToolbarModule,
-  MatMenuModule
+  MatMenuModule,
+  MatSidenavModule,
+  MatDividerModule,
 ];
 const SHARED_MODULES = [FormsModule, ReactiveFormsModule];
+const SHARED_COMPONENTS = [LoginFormComponent, RegisterFormComponent];
 
 @NgModule({
-  declarations: [],
+  declarations: [...SHARED_COMPONENTS, PagenotfoundComponent],
   imports: [
     CommonModule,
-    SharedRoutingModule,
     ...MATERIAL_MODULES
   ],
-  exports: [...MATERIAL_MODULES, ...SHARED_MODULES],
+  exports: [...MATERIAL_MODULES, ...SHARED_MODULES, ...SHARED_COMPONENTS],
 })
 export class SharedModule { }

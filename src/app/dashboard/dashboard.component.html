@@ -1,16 +1,41 @@
-<p>
-  <mat-toolbar color="primary">
-    <button mat-icon-button class="sidenav" aria-label="sidenav">
-      <mat-icon>menu</mat-icon>
+<mat-toolbar>
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+        menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+        close
+    </mat-icon>
+</button>
+  Sistema de Administración de clientes</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav">
+    <img class="avatar mat-elevation-z8" src="https://img.freepik.com/premium-vector/cute-white-cat-cartoon-vector-illustration_42750-808.jpg?w=740" />
+    <h4 class="name">Bienvenido </h4>
+    <p class="designation">user</p>
+    <mat-divider></mat-divider>
+    <button mat-button class="menu-button" [routerLink]="['']">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
     </button>
-    <span>Panel de adm</span>
-    <span class="spacer"></span>
-    <button mat-icon-button class="favorite" aria-label="favorite-heart">
-      <mat-icon>favorite</mat-icon>
+    <button mat-button class="menu-button" [routerLink]="['/client']">
+      <mat-icon>person</mat-icon>
+      <span>Clientes</span>
     </button>
-    <button mat-icon-button class="share" aria-label="share">
-      <mat-icon>share</mat-icon>
+    <button mat-button class="menu-button" [routerLink]="['/product']">
+      <mat-icon>format_list_bulleted</mat-icon>
+      <span>Productos</span>
     </button>
-  </mat-toolbar>
-</p>
-<router-outlet></router-outlet>
+    <mat-divider></mat-divider>
+    <button mat-button class="menu-button" [routerLink]="['/login']">
+      <mat-icon>logout</mat-icon>
+      Salir
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      Main content here!
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
