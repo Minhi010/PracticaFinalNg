@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+}
+.mat-header-cell,
+.mat-cell {
+  padding: 5px 25px;
+}
+
+.color-grad {
+  background-image: var(--gradiente);
+  color: #000;
+}
+.add {
+  display: flex;
+  justify-content: flex-end;
+}
+.d-flex {
+  display: flex;
+}

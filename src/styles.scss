@@ -1,10 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --gradiente: radial-gradient(
+    circle at 95.45% -4.17%,
+    #d1e7d9 0,
+    #cfe7dc 4.55%,
+    #cde7de 9.09%,
+    #cbe7e1 13.64%,
+    #cae7e3 18.18%,
+    #c9e7e6 22.73%,
+    #c9e7e8 27.27%,
+    #c9e7eb 31.82%,
+    #c9e7ed 36.36%,
+    #cae6ef 40.91%,
+    #cbe6f1 45.45%,
+    #cde5f2 50%,
+    #cfe4f3 54.55%,
+    #d1e4f4 59.09%,
+    #d4e3f5 63.64%,
+    #d7e2f5 68.18%,
+    #dae1f5 72.73%,
+    #dde0f4 77.27%,
+    #e0e0f4 81.82%,
+    #e3dff3 86.36%,
+    #e6def1 90.91%,
+    #e9ddf0 95.45%,
+    #ecddee 100%
+  );
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html,
 body {
-  height: 100%;
-}
-body {
-  margin: 0;
+  min-height: 100vh;
+  max-width: 100%;
+  margin: 0 auto;
   font-family: "Dosis", sans-serif;
 }

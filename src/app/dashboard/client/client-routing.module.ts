@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClientComponent } from './client.component';
 import { ClientFormComponent } from './components/client-form/client-form.component';
 import { ClientListComponent } from './components/client-list/client-list.component';
+import { ClientMenuComponent } from './components/client-menu/client-menu.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,7 @@ const routes: Routes = [
     component: ClientComponent,
     children: [
       {
-        path: '', pathMatch: 'full', redirectTo: 'client'
+        path: 'menu', component: ClientMenuComponent
       },
       {
         path: 'list', component: ClientListComponent,
@@ -18,6 +19,9 @@ const routes: Routes = [
       {
         path: 'form', component: ClientFormComponent,
       },
+      {
+        path: '', pathMatch: 'full', redirectTo: 'menu',
+      }
     ],
   },
 ];

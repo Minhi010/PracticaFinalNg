@@ -14,6 +14,8 @@ import { RegisterFormComponent } from './components/register-form/register-form.
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 const MATERIAL_MODULES = [
   MatButtonModule,
   MatInputModule,
@@ -24,6 +26,8 @@ const MATERIAL_MODULES = [
   MatMenuModule,
   MatSidenavModule,
   MatDividerModule,
+  MatTableModule,
+  MatPaginatorModule
 ];
 const SHARED_MODULES = [FormsModule, ReactiveFormsModule];
 const SHARED_COMPONENTS = [LoginFormComponent, RegisterFormComponent];
