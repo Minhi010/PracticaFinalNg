@@ -5,14 +5,17 @@ import { PagenotfoundComponent } from './shared/components/pagenotfound/pagenotf
 
 const routes: Routes = [
   {
-    path: '', component: LoginFormComponent
+    path: '',
+    redirectTo: "login",
+    pathMatch: "full"
   },
   {
     path: 'login', component: LoginFormComponent
-  }, {
+  },
+  {
     path: 'dashboard',
     loadChildren: () =>
-      import('../app/dashboard/dashboard.module').then(m => m.DashboardModule),
+      import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   { path: '**', component: PagenotfoundComponent }
 ];

@@ -40,7 +40,7 @@ export class LoginFormComponent implements OnInit {
   fakeloading() {
     this.loading = true;
     setTimeout(() => {
-      this.router.navigateByUrl('');
+      this.router.navigateByUrl('dashboard');
       this.loading = false;
     }, 1500);
   }

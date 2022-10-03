@@ -4,17 +4,21 @@ import { DashboardComponent } from './dashboard.component';
 
 const routes: Routes = [
   {
-    path: '/dashboard',
+    path: '',
     component: DashboardComponent,
     children: [
       {
-        path: 'client', loadChildren: () => import('../dashboard/client/client.module').then(m => m.ClientModule),
+        path: 'client',
+        loadChildren: () => import('../dashboard/client/client.module').then(m => m.ClientModule),
       },
       {
-        path: 'product', loadChildren: () => import('../dashboard/product/product.module').then(m => m.ProductModule),
+        path: 'product',
+        loadChildren: () => import('../dashboard/product/product.module').then(m => m.ProductModule),
       },
       {
-        path: '', pathMatch: 'full', redirectTo: 'client',
+        path: '',
+        pathMatch: 'full',
+        redirectTo: '',
       },
     ],
   },
