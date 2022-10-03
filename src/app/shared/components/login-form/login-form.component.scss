@@ -4,50 +4,29 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #714e9e inset !important;
 }
-:host {
-  display: flex;
-  justify-content: center;
-}
-
+// :host {
+//   display: flex;
+//   justify-content: center;
+// }
 .mat-form-field {
   width: 100%;
   min-width: 300px;
+  color: rgb(39, 36, 36);
 }
 
 mat-card-title,
 mat-card-content {
   display: flex;
   justify-content: center;
+  color: rgb(39, 36, 36);
+}
+label {
+  color: #000;
 }
 mat-card {
-  background-image: radial-gradient(
-    circle at 95.45% -4.17%,
-    #d1e7d9 0,
-    #cfe7dc 4.55%,
-    #cde7de 9.09%,
-    #cbe7e1 13.64%,
-    #cae7e3 18.18%,
-    #c9e7e6 22.73%,
-    #c9e7e8 27.27%,
-    #c9e7eb 31.82%,
-    #c9e7ed 36.36%,
-    #cae6ef 40.91%,
-    #cbe6f1 45.45%,
-    #cde5f2 50%,
-    #cfe4f3 54.55%,
-    #d1e4f4 59.09%,
-    #d4e3f5 63.64%,
-    #d7e2f5 68.18%,
-    #dae1f5 72.73%,
-    #dde0f4 77.27%,
-    #e0e0f4 81.82%,
-    #e3dff3 86.36%,
-    #e6def1 90.91%,
-    #e9ddf0 95.45%,
-    #ecddee 100%
-  );
+  background-image: var(--gradiente);
+  // margin-top: 15%;
 }
-
 .error {
   padding: 16px;
   width: 300px;
@@ -58,4 +37,24 @@ mat-card {
 .button {
   display: flex;
   justify-content: flex-end;
+}
+.spinner {
+  margin: 0 auto;
+}
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.login {
+  width: 100%;
+  max-width: 350px;
+  padding: 15px;
+  margin: auto;
+  text-align: center;
+}
+
+.ancho {
+  width: 80%;
 }

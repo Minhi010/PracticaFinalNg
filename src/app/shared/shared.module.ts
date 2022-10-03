@@ -10,12 +10,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { LoginFormComponent } from './components/login-form/login-form.component';
-import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 const MATERIAL_MODULES = [
   MatButtonModule,
   MatInputModule,
@@ -27,16 +28,19 @@ const MATERIAL_MODULES = [
   MatSidenavModule,
   MatDividerModule,
   MatTableModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatSnackBarModule,
+  MatProgressSpinnerModule
 ];
 const SHARED_MODULES = [FormsModule, ReactiveFormsModule];
-const SHARED_COMPONENTS = [LoginFormComponent, RegisterFormComponent];
+const SHARED_COMPONENTS = [LoginFormComponent];
 
 @NgModule({
   declarations: [...SHARED_COMPONENTS, PagenotfoundComponent],
   imports: [
     CommonModule,
-    ...MATERIAL_MODULES
+    ...MATERIAL_MODULES,
+    ...SHARED_MODULES
   ],
   exports: [...MATERIAL_MODULES, ...SHARED_MODULES, ...SHARED_COMPONENTS],
 })

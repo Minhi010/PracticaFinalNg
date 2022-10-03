@@ -1,6 +1,8 @@
 mat-toolbar {
   background-image: var(--gradiente);
   color: #000;
+  font-family: "Dosis", sans-serif;
+  font-size: 2rem;
 }
 
 mat-sidenav {
@@ -53,7 +55,7 @@ mat-sidenav-container {
 
 .designation {
   margin-top: 2px;
-  font-size: 0.7rem;
+  font-size: 1.5rem;
   color: rgb(15, 14, 14);
 }
 

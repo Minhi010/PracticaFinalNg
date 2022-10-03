@@ -1,5 +1,6 @@
 table {
   width: 100%;
+  background-color: rgba(56, 54, 54, 0.199);
 }
 .mat-header-cell,
 .mat-cell {
@@ -16,4 +17,13 @@ table {
 }
 .d-flex {
   display: flex;
+}
+.d-flex > button {
+  margin: 3px;
+}
+@media (max-width: 680px) {
+  .mat-header-cell,
+  .mat-cell {
+    padding: 3px 10px;
+  }
 }

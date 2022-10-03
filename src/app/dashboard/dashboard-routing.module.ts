@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginFormComponent } from '../shared/components/login-form/login-form.component';
-import { RegisterFormComponent } from '../shared/components/register-form/register-form.component';
 import { DashboardComponent } from './dashboard.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: '/dashboard',
     component: DashboardComponent,
     children: [
       {

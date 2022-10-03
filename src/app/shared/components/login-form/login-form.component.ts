@@ -1,9 +1,8 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
-// @Input() error: string | null;
-
-// @Output() submitEM = new EventEmitter();
 @Component({
   selector: 'admng-login-form',
   templateUrl: './login-form.component.html',
@@ -11,17 +10,38 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 
 export class LoginFormComponent implements OnInit {
+  loading = false;
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder, private snack: MatSnackBar, private router: Router) {
+    this.form = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+    });
+  }
   ngOnInit(): void {
   }
-  form: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-  });
-
-  // submit() {
-  //   if (this.form.valid) {
-  //     this.submitEM.emit(this.form.value);
-  //   }
-  // }
-
+  ingresar() {
+    const user = this.form.value.username;
+    const pass = this.form.value.password;
+    if (user == "admin" && pass == "admin123") {
+      this.fakeloading();
+    } else {
+      this.error();
+      this.form.reset();
+    }
+  }
+  error() {
+    this.snack.open('Usuario o contraseña no válida.', 'x', {
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+    });
+  }
+  fakeloading() {
+    this.loading = true;
+    setTimeout(() => {
+      this.router.navigateByUrl('');
+      this.loading = false;
+    }, 1500);
+  }
 }
