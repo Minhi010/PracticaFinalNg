@@ -6,7 +6,6 @@ table {
 // .mat-cell {
 //   padding: 5px 25px;
 // }
-
 .color-grad {
   background-image: var(--gradiente);
   color: #000;
@@ -15,9 +14,7 @@ table {
   display: flex;
   justify-content: flex-end;
 }
-.d-flex {
-  display: flex;
-}
+
 .d-flex > button {
   margin: 3px;
 }
@@ -26,4 +23,8 @@ table {
   .mat-cell {
     padding: 3px 10px;
   }
+}
+.mat-icon-button {
+  width: 35px;
+  height: 35px;
 }
