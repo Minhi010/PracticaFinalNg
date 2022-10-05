@@ -2,10 +2,6 @@ table {
   width: 100%;
   background-color: rgba(56, 54, 54, 0.199);
 }
-// .mat-header-cell,
-// .mat-cell {
-//   padding: 5px 25px;
-// }
 .color-grad {
   background-image: var(--gradiente);
   color: #000;
@@ -14,17 +10,11 @@ table {
   display: flex;
   justify-content: flex-end;
 }
-
 .d-flex > button {
   margin: 3px;
-}
-@media (max-width: 680px) {
-  .mat-header-cell,
-  .mat-cell {
-    padding: 3px 10px;
-  }
 }
 .mat-icon-button {
   width: 35px;
   height: 35px;
+  line-height: 0;
 }

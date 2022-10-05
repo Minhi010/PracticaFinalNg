@@ -17,6 +17,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSortModule } from '@angular/material/sort';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 const MATERIAL_MODULES = [
   MatButtonModule,
   MatInputModule,
@@ -30,7 +35,12 @@ const MATERIAL_MODULES = [
   MatTableModule,
   MatPaginatorModule,
   MatSnackBarModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatTooltipModule,
+  MatSortModule,
+  MatGridListModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 ];
 const SHARED_MODULES = [FormsModule, ReactiveFormsModule];
 const SHARED_COMPONENTS = [LoginFormComponent];

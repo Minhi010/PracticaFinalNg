@@ -1,9 +1,9 @@
 export interface Client {
-  nombre: string;
-  apellido: string;
+  name: string;
+  lastname: string;
   email: string;
   dni: number;
-  fechaNac: Date;
-  telefono: string;
-  direccion: string;
+  dateoB: Date;
+  phone: string;
+  address: string;
 }

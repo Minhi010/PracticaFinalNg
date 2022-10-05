@@ -21,7 +21,7 @@ export class LoginFormComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-  ingresar() {
+  login() {
     const user = this.form.value.username;
     const pass = this.form.value.password;
     if (user == "admin" && pass == "admin123") {
@@ -33,6 +33,7 @@ export class LoginFormComponent implements OnInit {
   }
   error() {
     this.snack.open('Usuario o contraseña no válida.', 'x', {
+      duration: 1000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
     });

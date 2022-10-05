@@ -1,1 +1,58 @@
-<p>client-form works!</p>
+<mat-card>
+  <form [formGroup]="formC" (ngSubmit)="addClient()">
+    <mat-grid-list cols="4" rowHeight="65px">
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-form-field class="width-rows" >
+        <mat-label>Nombres</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-form-field class="width-rows" >
+        <mat-label>Apellidos</mat-label>
+        <input matInput formControlName="lastname">
+      </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-form-field class="width-rows">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="user@mail.com" formControlName="email" required>
+      </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-form-field class="width-rows">
+        <mat-label>D.N.I</mat-label>
+        <input matInput formControlName="dni">
+      </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <mat-form-field class="width-rows">
+          <mat-label>Fecha de nacimiento</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dateoB">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <mat-form-field class="width-rows" >
+          <mat-label>Teléfono</mat-label>
+          <input matInput formControlName="phone">
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <mat-form-field class="width-rows" >
+          <mat-label>Dirección</mat-label>
+          <input matInput formControlName="address">
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1" class="add">
+        <button  type="submit" mat-raised-button class="color-grad" matTooltip="Agregar nuevo" [disabled]="formC.invalid">
+          <mat-icon>add</mat-icon> Agregar
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </form>
+
+</mat-card>
+

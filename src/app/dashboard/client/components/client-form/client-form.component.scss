@@ -1,0 +1,14 @@
+.width-rows {
+  width: 80%;
+}
+mat-card {
+  height: 80%;
+  max-width: 75%;
+  margin: 0 auto;
+  font-size: 1rem;
+  background-color: rgba(56, 54, 54, 0.199);
+}
+.add {
+  display: flex;
+  justify-content: flex-end;
+}
