@@ -6,9 +6,23 @@ mat-card {
   max-width: 75%;
   margin: 0 auto;
   font-size: 1rem;
-  background-color: rgba(56, 54, 54, 0.199);
+  background-color: rgba(56, 54, 54, 0.089);
+  box-shadow: none !important;
 }
 .add {
   display: flex;
   justify-content: flex-end;
+  background-image: var(--gradiente);
+}
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.formCliente {
+  width: 100%;
+  padding: 15px;
+  margin: auto;
+  text-align: center;
 }
