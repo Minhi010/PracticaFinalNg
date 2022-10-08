@@ -1,0 +1,22 @@
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.pagewrong {
+  width: 100%;
+  max-width: 350px;
+  margin: auto;
+  text-align: center;
+}
+mat-card {
+  box-shadow: none !important;
+  background-color: #303030;
+  width: 100%;
+}
+.avatar {
+  margin-top: 16px;
+  width: 400px;
+  height: 400px;
+}

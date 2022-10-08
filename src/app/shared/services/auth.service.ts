@@ -6,24 +6,23 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { Observable, of } from "rxjs";
 
 
-@Injectable()
+@Injectable({ providedIn: "root" })
 export class AuthService {
-  isLogin = false;
-
+  isLogged = false;
   constructor(private fb: FormBuilder, private snack: MatSnackBar, private router: Router) {
-
   }
   login(username: string, password: string): Observable<boolean> {
-
     if (username == "admin" && password == "admin123") {
-      this.isLogin = true;
-
+      localStorage.setItem("isLogged", "true");
+      this.isLogged = true;
     } else {
       this.error();
-      this.isLogin = false;
+      localStorage.setItem("isLogged", "false");
+      this.isLogged = false;
     }
-    console.log(this.isLogin);
-    return of(this.isLogin);
+    console.log(this.isLogged + ' service');
+
+    return of(this.isLogged);
   }
   error() {
     this.snack.open('Usuario o contraseña no válida.', 'x', {
@@ -31,5 +30,13 @@ export class AuthService {
       horizontalPosition: 'right',
       verticalPosition: 'top',
     });
+  }
+  isAuthenticated() {
+    let isAuth = localStorage.getItem("isLogged") ?? "false";
+    return JSON.parse(isAuth);
+  }
+  logout() {
+    localStorage.removeItem("isLogged");
+    this.router.navigateByUrl('login');
   }
 }

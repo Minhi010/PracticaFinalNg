@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { delay } from 'rxjs';
+import { AuthService } from '../shared/services/auth.service';
 @Component({
   selector: 'admng-dashboard',
   templateUrl: './dashboard.component.html',
@@ -10,7 +11,7 @@ import { delay } from 'rxjs';
 export class DashboardComponent implements OnInit {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
-  constructor(private observer: BreakpointObserver) { }
+  constructor(private observer: BreakpointObserver, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +25,9 @@ export class DashboardComponent implements OnInit {
         this.sidenav.open();
       }
     });
+  }
+  logout() {
+    this.authService.logout();
   }
 
 }

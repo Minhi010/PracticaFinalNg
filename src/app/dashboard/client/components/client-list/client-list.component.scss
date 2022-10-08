@@ -6,10 +6,6 @@ table {
   background-image: var(--gradiente);
   color: #000;
 }
-.add {
-  display: flex;
-  justify-content: flex-end;
-}
 .d-flex > button {
   margin: 3px;
 }
@@ -17,4 +13,8 @@ table {
   width: 35px;
   height: 35px;
   line-height: 0;
+}
+.text-alig {
+  display: flex;
+  justify-content: space-around;
 }

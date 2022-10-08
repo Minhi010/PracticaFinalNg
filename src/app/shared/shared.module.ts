@@ -22,6 +22,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { AuthService } from './services/auth.service';
 const MATERIAL_MODULES = [
   MatButtonModule,
   MatInputModule,
@@ -53,5 +54,6 @@ const SHARED_COMPONENTS = [LoginFormComponent];
     ...SHARED_MODULES
   ],
   exports: [...MATERIAL_MODULES, ...SHARED_MODULES, ...SHARED_COMPONENTS],
+  providers: [AuthService]
 })
 export class SharedModule { }

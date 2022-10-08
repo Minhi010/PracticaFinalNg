@@ -16,6 +16,7 @@ import { ClientModule } from './client/client.module';
     CoreModule,
     SharedModule,
     ClientModule
-  ]
+  ],
+  providers: []
 })
 export class DashboardModule { }

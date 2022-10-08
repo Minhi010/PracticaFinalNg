@@ -23,22 +23,22 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void { }
 
   login() {
-    debugger
     this.authService.login(this.form.value.username, this.form.value.password)
       .subscribe((data) => {
-        console.log(data);
-        console.log(this.form.value.username, this.form.value.password);
-
         if (!data) {
           this.router.navigateByUrl('/login');
           this.authService.error();
           this.form.reset();
+          console.log(data);
+
         } else {
           this.isLogin = true;
           setTimeout(() => {
             this.router.navigateByUrl('dashboard/client/menu');
           }, 1500);
         }
-      });
+      }); console.log(this.isLogin);
   }
+
+
 }
