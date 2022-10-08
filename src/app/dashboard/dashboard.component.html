@@ -16,16 +16,20 @@
     <mat-divider></mat-divider>
     <button mat-button class="menu-button" [routerLink]="['../dashboard/client/menu']">
       <mat-icon>home</mat-icon>
-      <span>Home</span>
-    </button>
-    <button mat-button class="menu-button" [routerLink]="['client']">
-      <mat-icon>person</mat-icon>
       <span>Clientes</span>
     </button>
-    <button mat-button class="menu-button" [routerLink]="['product']">
+    <ol>
+      <li> <button mat-button class="menu-button" [routerLink]="['client/form']">
+      <mat-icon>person</mat-icon>
+      <span>Formulario</span>
+    </button></li>
+      <li><button mat-button class="menu-button" [routerLink]="['client/list']">
       <mat-icon>format_list_bulleted</mat-icon>
-      <span>Productos</span>
-    </button>
+      <span>Listado</span>
+    </button></li>
+    </ol>
+
+
     <mat-divider></mat-divider>
     <button mat-button class="menu-button" [routerLink]="['']">
       <mat-icon>logout</mat-icon>

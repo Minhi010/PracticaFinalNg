@@ -1,47 +1,45 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+
+
 
 @Component({
   selector: 'admng-login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
-
 export class LoginFormComponent implements OnInit {
-  loading = false;
+  isLogin: boolean = false;
+  isValidUser: boolean = false;
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private snack: MatSnackBar, private router: Router) {
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
     this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
+
   login() {
-    const user = this.form.value.username;
-    const pass = this.form.value.password;
-    if (user == "admin" && pass == "admin123") {
-      this.fakeloading();
-    } else {
-      this.error();
-      this.form.reset();
+    try {
+      this.authService.login(this.form.value.username, this.form.value.password)
+        .subscribe((data) => {
+          if (data) { this.router.navigateByUrl('dashboard/client/menu') }
+          this.isLogin = true;
+          this.isValidUser = true;
+          this.form.reset();
+        });
+    } catch {
+      this.authService.error();
+
+      setTimeout(() => {
+        this.isLogin = false;
+        this.router.navigateByUrl('login');
+
+      }, 1500);
     }
-  }
-  error() {
-    this.snack.open('Usuario o contraseña no válida.', 'x', {
-      duration: 1000,
-      horizontalPosition: 'right',
-      verticalPosition: 'top',
-    });
-  }
-  fakeloading() {
-    this.loading = true;
-    setTimeout(() => {
-      this.router.navigateByUrl('dashboard/client/menu');
-    }, 1500);
   }
 }

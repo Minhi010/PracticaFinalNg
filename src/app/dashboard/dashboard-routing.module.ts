@@ -12,10 +12,6 @@ const routes: Routes = [
         loadChildren: () => import('../dashboard/client/client.module').then(m => m.ClientModule),
       },
       {
-        path: 'product',
-        loadChildren: () => import('../dashboard/product/product.module').then(m => m.ProductModule),
-      },
-      {
         path: '',
         pathMatch: 'full',
         redirectTo: '',

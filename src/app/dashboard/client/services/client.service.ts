@@ -44,8 +44,6 @@ export class ClientService {
     clientList[index] = client;
     localStorage.setItem(KEYCLIENT, JSON.stringify(clientList));
     return client;
-
-
   }
 }
 const CLIENT: Client[] =
