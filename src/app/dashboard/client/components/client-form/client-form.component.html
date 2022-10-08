@@ -48,8 +48,11 @@
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile [colspan]="2" [rowspan]="1">
-            <button class="add" type="submit" mat-raised-button class="color-grad" matTooltip="Agregar nuevo" [disabled]="formC.invalid">
+            <button *ngIf="!index" class="add" (click)="addClient()" mat-raised-button class="color-grad" matTooltip="Agregar nuevo" [disabled]="formC.invalid">
               <mat-icon>add</mat-icon> Agregar
+            </button>
+            <button *ngIf="index" class="add" (click)="updateClient()" mat-raised-button class="color-grad" matTooltip="Actualizar" [disabled]="formC.invalid">
+              <mat-icon>add</mat-icon> Actualizar
             </button>
           </mat-grid-tile>
         </mat-grid-list>

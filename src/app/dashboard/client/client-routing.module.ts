@@ -22,6 +22,9 @@ const routes: Routes = [
         path: 'form', component: ClientFormComponent,
       },
       {
+        path: 'form/:index', component: ClientFormComponent,
+      },
+      {
         path: '', pathMatch: 'full', redirectTo: 'menu',
       }
     ],

@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Client } from 'src/app/core/entity/client';
 import { ClientService } from '../../services/client.service';
 
@@ -19,7 +20,7 @@ export class ClientListComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
   clientList: Client[] = [];
 
-  constructor(private clientService: ClientService, private snack: MatSnackBar) { }
+  constructor(private clientService: ClientService, private snack: MatSnackBar, private router: Router) { }
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
@@ -27,18 +28,19 @@ export class ClientListComponent implements OnInit {
 
   ngOnInit(): void {
     this.fillClients();
+    console.log(this.clientService.getClientsByName('Readme'));
   }
 
   fillClients() {
     this.clientList = this.clientService.getClients();
     this.dataSource = new MatTableDataSource(this.clientList);
   }
-  editClients(index: number) {
-    console.log(index);
+  editClient(index: number) {
+    this.router.navigateByUrl(`dashboard/client/form/${index}`);
   }
-  deleteClients(index: number) {
-    this.clientService.deleteClients(index);
-    this.fillClients();
+  deleteClient(index: number) {
+    let indexDelete = this.clientService.deleteClients(index);
+    this.dataSource.data = this.dataSource.data.filter((item, index) => index !== indexDelete);
     this.snack.open('Cliente eliminado.', 'x', {
       duration: 1000,
       horizontalPosition: 'right',

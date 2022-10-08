@@ -1,9 +1,10 @@
-<div *ngIf="clientList.length > 0 ">
 <div class="add">
-    <button mat-raised-button class="color-grad" matTooltip="Agregar nuevo" [routerLink]="['../form']">
-      <mat-icon>add</mat-icon> Agregar
-    </button>
-  </div>
+  <button mat-raised-button class="color-grad" matTooltip="Agregar nuevo" [routerLink]="['../form']">
+    <mat-icon>add</mat-icon> Agregar
+  </button>
+</div>
+<ng-container *ngIf="dataSource.data.length > 0; else empty">
+
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z0" matSort >
     <ng-container matColumnDef="name" >
@@ -39,10 +40,10 @@
     <ng-container matColumnDef="actions">
       <th *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let client; let i = index" class="d-flex">
-        <button mat-icon-button class="color-grad" matTooltip="Editar" (click)="editClients(i)">
+        <button mat-icon-button class="color-grad" matTooltip="Editar" (click)="editClient(i)">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button class="color-grad" matTooltip="Eliminar" (click)="deleteClients(i)">
+        <button mat-icon-button class="color-grad" matTooltip="Eliminar" (click)="deleteClient(i)">
           <mat-icon>delete</mat-icon>
         </button>
       </td>
@@ -55,7 +56,7 @@
   showFirstLastButtons
   aria-label="Select page of periodic elements">
   </mat-paginator>
-</div>
-<div>
-  <h3 *ngIf="clientList.length == 0 ">No hay elementos para mostrar</h3>
-</div>
+</ng-container>
+<ng-template #empty>
+  <h3>No hay elementos para mostrar</h3>
+</ng-template>
