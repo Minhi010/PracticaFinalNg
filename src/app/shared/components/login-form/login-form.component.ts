@@ -12,7 +12,6 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginFormComponent implements OnInit {
   isLogin: boolean = false;
-  isValidUser: boolean = false;
   form: FormGroup;
 
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
@@ -24,22 +23,22 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void { }
 
   login() {
-    try {
-      this.authService.login(this.form.value.username, this.form.value.password)
-        .subscribe((data) => {
-          if (data) { this.router.navigateByUrl('dashboard/client/menu') }
-          this.isLogin = true;
-          this.isValidUser = true;
+    debugger
+    this.authService.login(this.form.value.username, this.form.value.password)
+      .subscribe((data) => {
+        console.log(data);
+        console.log(this.form.value.username, this.form.value.password);
+
+        if (!data) {
+          this.router.navigateByUrl('/login');
+          this.authService.error();
           this.form.reset();
-        });
-    } catch {
-      this.authService.error();
-
-      setTimeout(() => {
-        this.isLogin = false;
-        this.router.navigateByUrl('login');
-
-      }, 1500);
-    }
+        } else {
+          this.isLogin = true;
+          setTimeout(() => {
+            this.router.navigateByUrl('dashboard/client/menu');
+          }, 1500);
+        }
+      });
   }
 }

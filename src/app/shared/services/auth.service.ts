@@ -17,10 +17,12 @@ export class AuthService {
 
     if (username == "admin" && password == "admin123") {
       this.isLogin = true;
+
     } else {
       this.error();
       this.isLogin = false;
     }
+    console.log(this.isLogin);
     return of(this.isLogin);
   }
   error() {
@@ -30,12 +32,4 @@ export class AuthService {
       verticalPosition: 'top',
     });
   }
-  // fakeloading() {
-  //   this.isLogin = true;
-  //   setTimeout(() => {
-  //     this.router.navigateByUrl('dashboard/client/menu');
-  //   }, 1500);
-  //   return this.isLogin;
-  // }
-
 }
