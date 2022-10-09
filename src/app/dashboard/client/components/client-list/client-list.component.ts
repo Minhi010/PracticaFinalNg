@@ -28,7 +28,6 @@ export class ClientListComponent implements OnInit {
 
   ngOnInit(): void {
     this.fillClients();
-    console.log(this.clientService.getClientsByName('Readme'));
   }
 
   fillClients() {

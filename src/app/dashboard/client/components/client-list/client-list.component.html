@@ -1,12 +1,10 @@
-<div class="alig">
+<div class="text-alig">
   <h2>Listado de clientes</h2>
   <button mat-raised-button class="color-grad" matTooltip="Agregar nuevo" [routerLink]="['../form']">
     <mat-icon>add</mat-icon> Agregar
   </button>
 </div>
 <ng-container *ngIf="dataSource.data.length > 0; else empty">
-
-
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z0" matSort >
     <ng-container matColumnDef="name" >
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>

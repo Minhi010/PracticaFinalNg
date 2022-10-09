@@ -16,5 +16,9 @@ table {
 }
 .text-alig {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+h2 {
+  font-family: "Dosis", sans-serif;
+  font-size: 2rem;
 }

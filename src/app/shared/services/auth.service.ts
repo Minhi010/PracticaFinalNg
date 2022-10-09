@@ -20,8 +20,6 @@ export class AuthService {
       localStorage.setItem("isLogged", "false");
       this.isLogged = false;
     }
-    console.log(this.isLogged + ' service');
-
     return of(this.isLogged);
   }
   error() {

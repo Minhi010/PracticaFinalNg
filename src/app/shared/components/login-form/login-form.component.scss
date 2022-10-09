@@ -4,10 +4,6 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #714e9e inset !important;
 }
-// :host {
-//   display: flex;
-//   justify-content: center;
-// }
 .mat-form-field {
   width: 100%;
   min-width: 300px;
@@ -54,7 +50,6 @@ mat-card {
   margin: auto;
   text-align: center;
 }
-
 .ancho {
   width: 80%;
 }
